@@ -1,19 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get_card/screens/MyHomePage.dart';
 
 void main() {
-  runApp(MyWidget());
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home:  MyWidget()));
 }
 
-class MyWidget extends StatefulWidget {
-  const MyWidget({Key? key}) : super(key: key);
-
-  @override
-  State<MyWidget> createState() => _MyWidgetState();
-}
-
-class _MyWidgetState extends State<MyWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}

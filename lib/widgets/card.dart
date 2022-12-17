@@ -8,18 +8,17 @@ class CreditCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     String sum(String card_number) {
       String my_card = '';
       for (int i = 0; i < card_number.length; i++) {
-        if (i % 4 == 0 && i!=0) {
-          my_card += '   ' ;
+        if (i % 4 == 0 && i != 0) {
+          my_card += '   ';
         }
-        my_card+=card_number[i];
-        
+        my_card += card_number[i];
       }
       return my_card;
     }
+
     print(card.type.length);
     print(card.type);
     String con() {
@@ -104,6 +103,18 @@ class CreditCardWidget extends StatelessWidget {
               ),
             ),
           ),
+          // Padding(
+          //   padding: const EdgeInsets.all(50),
+          //   child: IconButton(
+          //       onPressed: () {
+          //         Navigator.pushReplacement(
+          //             context,
+          //             MaterialPageRoute(
+          //               builder: (context) => CreditCardWidget(card: card),
+          //             ));
+          //       },
+          //       icon: Icon(Icons.refresh)),
+          // )
         ],
       ),
     );

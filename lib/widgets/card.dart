@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_card/models/credit_card.dart';
+import 'package:get_card/screens/MyHomePage.dart';
 
 class CreditCardWidget extends StatelessWidget {
   final CreditCard card;
@@ -7,6 +8,18 @@ class CreditCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    String sum(String card_number) {
+      String my_card = '';
+      for (int i = 0; i < card_number.length; i++) {
+        if (i % 4 == 0 && i!=0) {
+          my_card += '   ' ;
+        }
+        my_card+=card_number[i];
+        
+      }
+      return my_card;
+    }
     print(card.type.length);
     print(card.type);
     String con() {
@@ -56,7 +69,10 @@ class CreditCardWidget extends StatelessWidget {
                   Row(children: [
                     Padding(
                         padding: const EdgeInsets.only(top: 90, left: 25),
-                        child: Image.asset('img/sim.png',color: Colors.yellow,)),
+                        child: Image.asset(
+                          'img/sim.png',
+                          color: Colors.yellow,
+                        )),
                     const Padding(
                         padding: EdgeInsets.only(top: 90, left: 10),
                         child:
@@ -64,7 +80,7 @@ class CreditCardWidget extends StatelessWidget {
                   ]),
                   Padding(
                       padding: const EdgeInsets.only(top: 150, left: 20),
-                      child: Text(card.cardNumber.toString(),
+                      child: Text(sum(card.cardNumber),
                           style: const TextStyle(fontSize: 22))),
                   Padding(
                     padding: const EdgeInsets.only(top: 180, left: 20),
@@ -87,7 +103,7 @@ class CreditCardWidget extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
